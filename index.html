@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV y Portafolio Profesional Interactivo de Sergio Carlos Eithan Acho Sullcata">
+    <title>Sergio Acho Sullcata | CV & Portafolio Profesional</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <a href="#inicio" class="brand-link" aria-label="Ir al inicio">
+                <strong>Sergio Acho Sullcata</strong>
+            </a>
+
+            <section class="nav-controls" aria-label="Controles de tema y menú">
+                <button
+                    type="button"
+                    id="theme-toggle"
+                    class="control-btn"
+                    aria-label="Cambiar entre modo claro y modo oscuro"
+                    aria-pressed="false">
+                    Modo Oscuro
+                </button>
+
+                <button
+                    type="button"
+                    id="menu-toggle"
+                    class="hamburger-btn"
+                    aria-label="Abrir o cerrar menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="nav-menu">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
+            </section>
+
+            <ul id="nav-menu" class="nav-menu" role="menubar">
+                <li role="none"><a href="#inicio" role="menuitem">Inicio</a></li>
+                <li role="none"><a href="#experiencia" role="menuitem">Educación y CV</a></li>
+                <li role="none"><a href="#portafolio" role="menuitem">Proyectos y Habilidades</a></li>
+                <li role="none"><a href="#github-api" role="menuitem">GitHub API</a></li>
+                <li role="none"><a href="#contacto" role="menuitem">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-wrapper" role="main">
+        <section id="inicio" class="hero-section" aria-labelledby="hero-title">
+            <article class="hero-article">
+                <header>
+                    <p class="hero-badge">Ingeniería de Sistemas • UCB "San Pablo"</p>
+                    <h1 id="hero-title">Sergio Carlos Eithan Acho Sullcata</h1>
+                </header>
+                <p>
+                    Estudiante de Ingeniería de Sistemas y desarrollador de software enfocado en aplicaciones web interactivas, arquitectura backend y bases de datos relacionales con Java, Spring Boot, C++, Python, SQL, HTML5, CSS3 y JavaScript ES6+.
+                </p>
+                <footer class="hero-actions">
+                    <a href="#portafolio" class="btn-primary" role="button">Ver Portafolio</a>
+                    <a href="#contacto" class="btn-secondary" role="button">Contactar</a>
+                </footer>
+            </article>
+        </section>
+
+        <section class="content-grid" aria-label="Contenido principal y perfil lateral">
+            <section class="primary-column" aria-label="Secciones del currículum">
+                <section id="experiencia" class="section-box" aria-labelledby="exp-title">
+                    <header class="section-header">
+                        <h2 id="exp-title">Formación Académica y Perfil</h2>
+                        <p>Trayectoria universitaria y desarrollo de sistemas de software.</p>
+                    </header>
+
+                    <section class="cards-grid" aria-label="Educación y experiencia">
+                        <article class="item-card">
+                            <header>
+                                <small class="item-meta">2024 — Presente</small>
+                                <h3>Ingeniería de Sistemas</h3>
+                            </header>
+                            <p><strong>Universidad Católica Boliviana "San Pablo" — Sede La Paz</strong></p>
+                            <p>Formación en Ingeniería de Software, Tecnologías Web I (SIS-214), Estructuras de Datos, Programación Orientada a Objetos y Bases de Datos Relacionales.</p>
+                        </article>
+
+                        <article class="item-card">
+                            <header>
+                                <small class="item-meta">Desarrollo de Software</small>
+                                <h3>Ingeniería Full-Stack y Sistemas</h3>
+                            </header>
+                            <p><strong>Java • Spring Boot • JavaFX • C++ • SQL</strong></p>
+                            <p>Implementación de algoritmos de rutas óptimas con Dijkstra, sistemas transaccionales con PostgreSQL y MySQL, interfaces JavaFX y simulaciones físicas 2D con Raylib.</p>
+                        </article>
+                    </section>
+                </section>
+
+                <section id="portafolio" class="section-box" aria-labelledby="portfolio-title">
+                    <header class="section-header">
+                        <h2 id="portfolio-title">Proyectos, Habilidades y Certificaciones</h2>
+                        <p>Buscador interactivo en tiempo real por teclado y filtro por categoría.</p>
+                    </header>
+
+                    <form id="filter-form" class="filter-bar" role="search" aria-label="Filtrar elementos del portafolio">
+                        <label for="search-input" class="form-label">
+                            <span>Buscar por nombre, tecnología o tipo (proyecto, habilidad, certificación):</span>
+                            <input
+                                type="search"
+                                id="search-input"
+                                name="search"
+                                placeholder="Escribe Java, Spring Boot, C++, SQL, Certificación..."
+                                autocomplete="off"
+                                aria-label="Buscar proyectos, habilidades o certificaciones"
+                                aria-controls="portfolio-list">
+                        </label>
+
+                        <fieldset id="category-buttons" class="category-group" aria-label="Filtrar por tipo de elemento">
+                            <legend class="sr-only">Categorías del portafolio</legend>
+                            <button type="button" class="filter-btn active" data-type="todos" aria-pressed="true">Todos</button>
+                            <button type="button" class="filter-btn" data-type="proyecto" aria-pressed="false">Proyectos</button>
+                            <button type="button" class="filter-btn" data-type="habilidad" aria-pressed="false">Habilidades</button>
+                            <button type="button" class="filter-btn" data-type="certificacion" aria-pressed="false">Certificaciones</button>
+                        </fieldset>
+                    </form>
+
+                    <p id="portfolio-count" class="count-label" aria-live="polite"></p>
+
+                    <section id="portfolio-list" class="cards-grid" aria-live="polite" aria-label="Lista filtrada del portafolio">
+                    </section>
+                </section>
+
+                <section id="github-api" class="section-box" aria-labelledby="api-title">
+                    <header class="section-header">
+                        <h2 id="api-title">Integración REST con GitHub API y Clima</h2>
+                        <p>Consumo asíncrono mediante Fetch API y async/await con manejo de estados y códigos HTTP.</p>
+                    </header>
+
+                    <form id="api-form" class="api-bar" aria-label="Consultar perfil y repositorios de GitHub">
+                        <label for="github-user" class="form-label">
+                            <span>Usuario de GitHub:</span>
+                            <input
+                                type="text"
+                                id="github-user"
+                                name="githubUser"
+                                value="WebDesignOneU"
+                                required
+                                placeholder="Ingresa un usuario de GitHub"
+                                aria-label="Usuario de GitHub a consultar">
+                        </label>
+                        <button type="submit" class="btn-primary" aria-label="Consultar API de GitHub">
+                            Consultar Perfil y Repositorios
+                        </button>
+                    </form>
+
+                    <nav id="api-actions" class="api-actions" aria-label="Pruebas de estados HTTP y servicios REST">
+                        <button type="button" class="filter-btn" data-endpoint="weather" aria-label="Consultar clima de La Paz">
+                            Clima La Paz (200 OK)
+                        </button>
+                        <button type="button" class="filter-btn" data-endpoint="400" aria-label="Probar código HTTP 400">
+                            Probar 400 Bad Request
+                        </button>
+                        <button type="button" class="filter-btn" data-endpoint="404" aria-label="Probar código HTTP 404">
+                            Probar 404 Not Found
+                        </button>
+                        <button type="button" class="filter-btn" data-endpoint="500" aria-label="Probar código HTTP 500">
+                            Probar 500 Server Error
+                        </button>
+                    </nav>
+
+                    <article id="api-result" class="api-status-box" role="status" aria-live="polite">
+                        <p>Esperando consulta...</p>
+                    </article>
+                </section>
+
+                <section id="contacto" class="section-box" aria-labelledby="contact-title">
+                    <header class="section-header">
+                        <h2 id="contact-title">Formulario de Contacto</h2>
+                        <p>Validación nativa HTML5 integrada con verificación en tiempo real.</p>
+                    </header>
+
+                    <form id="contact-form" class="contact-form" aria-label="Formulario de contacto">
+                        <fieldset class="form-grid">
+                            <legend class="sr-only">Campos del formulario de contacto</legend>
+
+                            <label for="contact-name" class="form-label">
+                                <span>Nombre Completo *</span>
+                                <input
+                                    type="text"
+                                    id="contact-name"
+                                    name="name"
+                                    required
+                                    minlength="3"
+                                    maxlength="60"
+                                    placeholder="Tu nombre completo"
+                                    aria-required="true"
+                                    aria-invalid="false"
+                                    aria-describedby="feedback-name">
+                                <small id="feedback-name" class="field-msg" role="alert" aria-live="polite"></small>
+                            </label>
+
+                            <label for="contact-email" class="form-label">
+                                <span>Correo Electrónico *</span>
+                                <input
+                                    type="email"
+                                    id="contact-email"
+                                    name="email"
+                                    required
+                                    placeholder="usuario@dominio.com"
+                                    aria-required="true"
+                                    aria-invalid="false"
+                                    aria-describedby="feedback-email">
+                                <small id="feedback-email" class="field-msg" role="alert" aria-live="polite"></small>
+                            </label>
+
+                            <label for="contact-subject" class="form-label full-span">
+                                <span>Asunto *</span>
+                                <input
+                                    type="text"
+                                    id="contact-subject"
+                                    name="subject"
+                                    required
+                                    minlength="5"
+                                    maxlength="80"
+                                    placeholder="Asunto del mensaje"
+                                    aria-required="true"
+                                    aria-invalid="false"
+                                    aria-describedby="feedback-subject">
+                                <small id="feedback-subject" class="field-msg" role="alert" aria-live="polite"></small>
+                            </label>
+
+                            <label for="contact-message" class="form-label full-span">
+                                <span>Mensaje (Mínimo 15 caracteres) *</span>
+                                <textarea
+                                    id="contact-message"
+                                    name="message"
+                                    rows="4"
+                                    required
+                                    minlength="15"
+                                    maxlength="500"
+                                    placeholder="Escribe tu mensaje aquí..."
+                                    aria-required="true"
+                                    aria-invalid="false"
+                                    aria-describedby="feedback-message"></textarea>
+                                <small id="feedback-message" class="field-msg" role="alert" aria-live="polite"></small>
+                            </label>
+                        </fieldset>
+
+                        <footer class="form-footer">
+                            <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                            <output id="form-result" class="form-output" role="status" aria-live="polite"></output>
+                        </footer>
+                    </form>
+                </section>
+            </section>
+
+            <aside class="sidebar-column" role="complementary" aria-labelledby="aside-title">
+                <article class="section-box">
+                    <header class="section-header">
+                        <h2 id="aside-title">Datos Personales</h2>
+                        <p>Resumen de perfil técnico</p>
+                    </header>
+
+                    <dl class="info-list">
+                        <dt>Nombre</dt>
+                        <dd>Sergio Carlos Eithan Acho Sullcata</dd>
+
+                        <dt>Carrera</dt>
+                        <dd>Ingeniería de Sistemas</dd>
+
+                        <dt>Universidad</dt>
+                        <dd>U.C.B. "San Pablo" — La Paz</dd>
+
+                        <dt>Asignatura</dt>
+                        <dd>Tecnologías Web I (SIS-214)</dd>
+
+                        <dt>Ubicación</dt>
+                        <dd>La Paz, Bolivia</dd>
+                    </dl>
+
+                    <section class="aside-block" aria-labelledby="stack-title">
+                        <h3 id="stack-title">Entornos de Desarrollo</h3>
+                        <ul class="tag-group" aria-label="Herramientas utilizadas">
+                            <li>VS Code</li>
+                            <li>Eclipse IDE</li>
+                            <li>DBeaver</li>
+                            <li>pgAdmin 4</li>
+                            <li>Git & GitHub</li>
+                            <li>PostgreSQL</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </section>
+
+                    <section class="aside-block" aria-labelledby="weather-aside-title">
+                        <h3 id="weather-aside-title">Clima en La Paz</h3>
+                        <p id="aside-weather" aria-live="polite">Consultando clima...</p>
+                    </section>
+                </article>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <p>Sergio Carlos Eithan Acho Sullcata — Tecnologías Web I (SIS-214) — Universidad Católica Boliviana "San Pablo" (<time datetime="2026">2026</time>)</p>
+    </footer>
+
+    <script src="./js/app.js" defer></script>
+</body>
+</html>
